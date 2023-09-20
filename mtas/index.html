@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>Methadone Availability Scenarios</title>
+
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes" /> 
+
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+	<link href="main-style.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+
+
+	<!-- JS only -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
+	<style> 
+		body { margin: 0; padding: 0; } 
+		#map { position: absolute; top: 0; bottom: 0; width: 100%; }; 
+	</style> 
+
+</head>
+
+
+<body> 
+
+	<div class="panel">
+    	
+    	<h1 > Methadone Treatment Access Scenarios</h1>
+    	
+    	<p class="text-muted"> <a class="text-secondary href="/#"> Joudrey et al, 2023 in press. </a> </p>
+
+    	<p class="text-muted"> This web map is a regional explorer. Zoom in to view locations. For a national view, download a <a href="images/access_scenarios_map_web.jpg">high-resolution image</a> of the map.</p>
+
+    	<hr>
+
+    	<p><img src="images/orange.png" height="15"><b> Current Availability </b> Within 30 minutes* driving time of a methadone maintenance clinic. </p>
+
+    	<p><img src="images/lt-blue.png" height="17"><b> Addition of specialist physician prescribing </b>  Current access plus within 30 minutes* driving time to any Opioid Treatment Provider or not in a HRSA Mental Health Shortage Area. </p>
+
+    	<p><img src="images/dk-blue.png" height="17"><b> Addition of clinician prescribing</b>  Proposed access plus within 30 minutes* driving time to a Federally Qualified Health Clinic (FQHC). </p>
+
+    	<p><img src="images/gray.png" height="17"><b> Still No Access Under Enhanced</b> </p>
+
+    	<p><img src="images/white.png" height="17"><b> Missing Data/ Excluded</b> </p>
+
+    	<hr>
+
+    	<p class="text-muted"> *20 minutes for urban areas </p>
+
+    	<p class="temp"> <b>Methodology:</b> See <a href="">Joudrey et al 2023</a> for details.
+
+    	<p class="temp"> <b>Data Sources:</b> Tract Boundaries (2019), US Census; HPSA Shortage Areas (2018), HRSA; Methadone, OTP, and FQHC (2020) Driving Times OEPS</p>
+
+
+
+	</div>
+
+	<div id='map'></div> 
+
+	
+	<script> 
+
+	<!-- Temp -- Need to push to Github Environmental Secret -->
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaGVyb3AtbGFiIiwiYSI6ImNsbGw0ZGI5ZDE3NWQzbW1rdGdqYnhqcWUifQ.RsuAn7wOL7ztpUiT_xBitA';
+
+		var map = new mapboxgl.Map({ 
+		container: 'map', 
+		style: 'mapbox://styles/herop-lab/clmqqc7ms052g01qxh1gk6dq2', 
+		zoom: 6,  
+		maxZoom: 11,
+		minZoom: 5.3,                                               
+		center: [-79.9949367598334, 40.44065875400719]                           
+
+	 }); 
+
+
+	// Add zoom and rotation controls to the map.
+	var nav = new mapboxgl.NavigationControl();
+		
+		map.addControl(nav, 'top-right');
+
+	<!-- Geocoder broken; re-integrate if possible -->
+	
+	</script>
+
+
+</body>
+
+</html>
