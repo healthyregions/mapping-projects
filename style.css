@@ -1,0 +1,26 @@
+html {
+    font-family: "EB Garamond", serif;
+    
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+}
+header > h1 {
+  margin: 5px 5px 5px 15px;
+}
+header > h1 > a {
+  color: black;
+  text-decoration: none;
+}
+header > h1 > a:hover {
+  color: black;
+  text-decoration: underline;
+}
+main {
+  text-align: center;
+}
+main a {
+  text-decoration: none;
+}
