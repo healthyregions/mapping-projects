@@ -1,0 +1,19 @@
+direction: right
+
+m: External GH repo\nlinked via submodule
+
+r: This Repository\n
+r.p1: SDOH Map\n/sdoh\n(native)
+r.p2: MTAS Map\n/mtas\n(submodule)
+
+site: Published Location
+site.p1: maps.healthyregions.org/sdoh
+site.p2: maps.healthyregions.org/mtas
+
+r.p1 -> site.p1
+m -- r.p2: {
+    style: {
+        stroke-dash: 2
+    }
+}
+r.p2 -> site.p2
