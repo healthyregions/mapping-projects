@@ -50,3 +50,11 @@ cd healthyregions.github.io
 git submodule update --recursive --remote
 git commit
 ```
+
+## Analytics
+
+To add basic analytics tracking to your project, put this line somewhere between the `<head>` and `</head>` tags of your `index.html` file:
+
+```
+<script defer data-domain="maps.healthyregions.org" src="https://plausible.io/js/script.js"></script>
+```
