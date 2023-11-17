@@ -14,7 +14,7 @@ Native subdirectories have the advantage of keeping all code in this repo, and b
 
 Both native subdirectory and submodule repos must have an `index.html` file in their root.
 
-## Pblish submodule updates
+## Publish submodule updates
 
 If changes are made to an external repo that is implemented here as a submodule, a GitHub pages will need to be rebuilt for those changes to be published.
 
