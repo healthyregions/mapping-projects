@@ -32,7 +32,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: 'true'
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull & update submodules recursively
         run: |
           git submodule update --init --recursive
