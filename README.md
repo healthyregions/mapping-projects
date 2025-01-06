@@ -1,10 +1,10 @@
-# healthyregions.github.io
+# Mapping projects -- Web map hosting for HEROP Lab
 
-Web map repository for various projects from the Healthy Regions &amp; Policies Lab.
+This is a central repository for using Github Pages to publish various projects from the Healthy Regions &amp; Policies Lab.
 
-Individual projects are stored in subdirectories and published to `maps.healthyregions.org/project-name`.
+Individual projects are stored in subdirectories and published to `maps.healthyregions.org/<subdirectory>`. Such directories can contain content native to this repo, or can be submodules that link directly to other repositories.
 
-Subdirectories can contain content native to this repo, or can be submodules that link directly to other repositories.
+For example, the `/sdoh` directory holds a single `index.html` file that redirects to a third-party location for a published map project (Carto). On the other hand, the `/mtas` directory is a submodule that points to [makosak/methadone-access-2023](https://github.com/makosak/methadone-access-2023), thereby effectively "re-publishing" that repostory to [maps.healthyregions.org/mtas](https://maps.healthyregions.org/mtas).
 
 ![structure](./structure.png)
 
@@ -16,7 +16,7 @@ Both native subdirectory and submodule repos must have an `index.html` file in t
 
 ## Publish submodule updates
 
-If changes are made to an external repo that is implemented here as a submodule, a GitHub pages will need to be rebuilt for those changes to be published.
+If changes are made to an external repo that is implemented here as a submodule, GitHub pages will need to be rebuilt for those changes to be published.
 
 An admin of this repo can trigger the rebuild with the following four clicks:
 
@@ -45,8 +45,8 @@ git commit
 Note that the pages build process won't actually update submodules in the committed code base. For that, an admin can use something like:
 
 ```
-git clone https://github.com/healthyregions/healthyregions.github.io --recurse-submodules
-cd healthyregions.github.io
+git clone https://github.com/healthyregions/mapping-projects --recurse-submodules
+cd mapping-projects
 git submodule update --recursive --remote
 git commit
 ```
